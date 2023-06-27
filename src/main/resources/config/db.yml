@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mc01?serverTimezone=Asia/Shanghai
+    username: root
+    password: mingchen142425
+    hikari:
+      auto-commit: true
+      maximum-pool-size: 10
+      minimum-idle: 10
+      connection-test-query: select 1
+      connection-timeout: 20000
+      data-source-properties:
+        cachePrepStmts: true
+        dataSource.cachePrepStmts: true
+        dataSource.prepStmtCacheSize: true
+        dataSource.prepStmtCacheSqlLimit: true
+        dataSource.userServerPrepStmts: true

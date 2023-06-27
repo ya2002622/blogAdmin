@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../element-ui/lib/theme-chalk/index.css">
+    <script src="../js/vue.js"></script>
+    <script src="../element-ui/lib/index.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div style="margin-left: 200px">
+    <h3>修改文章</h3>
+    <form id="frm" th:action="@{/article/edit}" method="post">
+        <table border="1px" cellspacing="0px" cellpadding="5px">
+            <tr>
+                <td>标题</td>
+                <td><input type="text" th:value="${article.title}" name="title"></td>
+            </tr>
+            <tr>
+                <td>副标题</td>
+                <td><input type="text" th:value="${article.summary}" name="summary" size="50"></td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>
+<textarea name="content" th:text="${article.content}" rows="20"
+          cols="60">
+</textarea>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <input type="hidden" name="id" th:value="${article.id}">
+        <input type="submit" value="确定修改" style="margin-left: 200px">
+    </form>
+</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>

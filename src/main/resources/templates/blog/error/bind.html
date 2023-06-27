@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>输入异常</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div style="margin-left: 200px">
+    <h1>输入异常</h1>
+    <table border="1px">
+        <thead>
+        <td>字段</td>
+        <td>描述</td>
+        </thead>
+        <tbody>
+        <tr th:each="err:${errors}">
+            <td th:text="${err.field}"></td>
+            <td th:text="${err.defaultMessage}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
